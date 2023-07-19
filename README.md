@@ -1,2 +1,2 @@
 # maven_project
-maven_project_test
+maven_project jenkins
