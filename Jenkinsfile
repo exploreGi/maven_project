@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('compile and clean') { 
             steps { 
-                sh 'printenv'
+                echo 'HELLO MULTIBRANCH'
 		sh 'mvn clean compile'
             }
         }
