@@ -17,5 +17,14 @@ pipeline {
                 sh 'mvn package'
             }
         }
+	stage('cat README'){
+	when{
+	 branch "bug*"
+	}
+        steps{
+		sh 'cat README.md'
+	}
+	}
+
     }
 }
