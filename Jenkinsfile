@@ -17,6 +17,7 @@ pipeline {
                 sh 'mvn package'
             }
         }
+<<<<<<< HEAD
 	stage('cat README'){
 	when{
 	 branch "bug*"
@@ -26,5 +27,13 @@ pipeline {
 	}
 	}
 
+=======
+        
+        stage('Archiving') {
+            steps {
+                archiveArtifacts '**/target/*.jar'
+            }
+        }
+>>>>>>> 2efd2f04ba3d5a95d227e951ba43502c9278fe53
     }
 }
