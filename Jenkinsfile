@@ -13,7 +13,8 @@ pipeline {
             }
 		post{
 		always{
-			junit allowEmptyResults:true, testResults:'target/surefire-reports/*.{xml,html}'
+			junit allowEmptyResults:true, testResults:'target/surefire-reports/*.xml'
+			publishHTML(target: 'target/site/', reportName: 'JUnit HTML Report', alwaysLinkToLastBuild: true)
 		}
 		}
         }
