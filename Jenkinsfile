@@ -14,7 +14,14 @@ pipeline {
 		post{
 		always{
 			junit allowEmptyResults:true, testResults:'target/surefire-reports/*.xml'
-			publishHTML(target: 'target/site/', reportName: 'JUnit HTML Report', alwaysLinkToLastBuild: true)
+			 publishHTML target: [
+             			 allowMissing: false,
+             			 alwaysLinkToLastBuild: false,
+             			 keepAll: true,
+              			 reportDir: 'coverage',
+             			 reportFiles: 'index.html',
+             			 reportName: 'JUnit Test Report'
+            		]
 		}
 		}
         }
