@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('compile and clean') { 
             steps { 
-                sh 'printenv'
+                echo 'HELLO MULTIBRANCH'
 		sh 'mvn clean compile'
             }
         }
@@ -17,15 +17,13 @@ pipeline {
 		}
 		}
         }
-	
-
-        stage('Deploy') {
+     stage('Deploy') {
             steps {
                 sh 'mvn package'
             }
         }
-	       stage('Archiving') {
-            steps {
+stage('Archiving') {
+        steps {
                 archiveArtifacts '**/target/*.jar'
             }
         }
